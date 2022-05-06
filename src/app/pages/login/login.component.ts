@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   password = new FormControl('');
   loadingSub?: Subscription;
   loadingObservation?: Observable<boolean>;
+  loading: boolean = false;
 
   constructor(private router: Router, private loadingService: FakeLoadingService) { }
 
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login(){
+    this.loading = true;
     this.loadingObservation = this.loadingService.loadingWithObservable(this.email.value, this.password.value);
     this.loadingSub = this.loadingObservation
     .subscribe(
@@ -33,8 +35,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigateByUrl('/main');
       }, error: (error) => {
         console.error(error);
+        this.loading = false;
       }, complete: () => {
         console.log('Finally');
+        this.loading = false;
       }
       }
     );
