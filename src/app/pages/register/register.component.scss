@@ -13,3 +13,22 @@
 form div{
     padding: 5px;
 }
+
+form{
+    display: inline-grid;
+    width: 50%;
+    align-self: center;
+}
+
+.names{
+    width: 100%;
+    display: inline-grid;
+}
+
+span{
+    padding: 10px;
+}
+
+button{
+    width: 100px;
+}

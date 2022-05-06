@@ -1,5 +1,8 @@
-<div>
-    <select (change)="reload()" [(ngModel)]="chosenIngatlan">
-        <option *ngFor="let obj of ingatlanObjectInput" [ngValue]="obj">{{obj.id}}</option>
-    </select>
+<div class="imageList">
+    <h2>Pick from our houses you want to see</h2>
+    <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="reload()" [(ngModel)]="chosenIngatlan">
+            <mat-option *ngFor="let obj of ingatlanObjectInput" [value]="obj">{{obj.id}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>

@@ -1,32 +1,37 @@
 [
     {
-        "id": "OQyRttOV4l8",
+        "id": "Ház_1",
         "user_name": "Gina Smith",
-        "user_url": "https://unsplash.com/@ginasmithphotography?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit",
+        "ingatlan_name": "Kertes Ház 1",
+        "details": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
         "photo_url": "https://unsplash.com/photos/OQyRttOV4l8?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit"
     },
     {
-        "id": "5XP-n_Xqqv8",
+        "id": "Ház_2",
         "user_name": "Jie Wang",
-        "user_url": "https://unsplash.com/@itworkonline?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit",
+        "ingatlan_name": "Kertes Ház 2",
+        "details": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
         "photo_url": "https://unsplash.com/photos/5XP-n_Xqqv8?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit"
     },
     {
-        "id": "Shf_B7x8gDA",
+        "id": "Ház_3",
         "user_name": "Emmalee Couturier",
-        "user_url": "https://unsplash.com/@emmcout?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit",
+        "ingatlan_name": "Kertes Ház 3",
+        "details": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
         "photo_url": "https://unsplash.com/photos/Shf_B7x8gDA?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit"
     },
     {
-        "id": "lFAhbzmvpak",
+        "id": "Ház_4",
         "user_name": "Kristaps Ungurs",
-        "user_url": "https://unsplash.com/@kristapsungurs?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit",
+        "ingatlan_name": "Kertes Ház 4",
+        "details": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
         "photo_url": "https://unsplash.com/photos/lFAhbzmvpak?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit"
     },
     {
-        "id": "eFXho78pQH8",
+        "id": "Ház_5",
         "user_name": "Deniz Demirci",
-        "user_url": "https://unsplash.com/@ddography?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit",
+        "ingatlan_name": "Kertes Ház 5",
+        "details": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
         "photo_url": "https://unsplash.com/photos/eFXho78pQH8?utm_source=unsample&utm_medium=referral&utm_campaign=api-credit"
     }
 ]
