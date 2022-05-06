@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  @Output() onCloseSidenav: EventEmitter<boolean>= new EventEmitter();
   @Output() selectedPage: EventEmitter<string> = new EventEmitter();
   @Input() currentPage: string = '';
 
@@ -19,4 +20,7 @@ export class MenuComponent implements OnInit {
     this.selectedPage.emit(this.currentPage);
   }
 
+  close(){
+    this.onCloseSidenav.emit(true);
+  }
 }

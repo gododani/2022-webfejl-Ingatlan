@@ -1,16 +1,16 @@
 <div class="login-component">
     <h1>Login to your account!</h1>
-    <span>
-        <label for="email">Email:</label>
-        <input type="email" [formControl]="email">
-    </span>
-    <span>
-        <label for="password">Password:</label>
-        <input type="password"[formControl]="password">
-    </span>
-    <span>
+    <mat-form-field>
+        <mat-label for="email">Email:</mat-label>
+        <input matInput type="email" [formControl]="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label for="password">Password:</mat-label>
+        <input matInput type="password"[formControl]="password">
+    </mat-form-field>
+    <mat-form-field>
         <button (click)="login()">Login</button>
         <button [routerLink]="'/register'">Register</button>
-    </span>
-    <p>{{ loadingObservation | async }}</p>
+    </mat-form-field>
+    <!-- <p>{{ loadingObservation | async }}</p> -->
 </div> 

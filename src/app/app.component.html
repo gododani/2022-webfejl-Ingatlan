@@ -1,21 +1,22 @@
 <mat-sidenav-container>
-    <mat-sidenav>
-        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page"></app-menu>
+    <mat-sidenav #sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)"></app-menu>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <button mat-icon-button>
-                <mat-icon>menu</mat-icon>
-            </button>
-            <div>INGATLAN-APP</div>
-            <div>
-                <ul>
-                    <li><a value="login">Login</a></li>
-                    <li><a value="register">Register</a></li>
-                    <li><a value="main">Main</a></li>
-                    <li><a value="ingatlans">Ingatlans</a></li>
-                    <li><a value="add-ingatlan">Add ingatlan</a></li>
-                    <li><a value="contact">Contact</a></li>
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div>REAL ESTATE</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+                    <li><a routerLink="/login">Login</a></li>
+                    <li><a routerLink="/register">Register</a></li>
+                    <li><a routerLink="/main">Home</a></li>
+                    <li><a routerLink="/ingatlans">Real Estate</a></li>
+                    <li><a routerLink="/contact">Contact</a></li>
                 </ul>
             </div>
         </mat-toolbar>
