@@ -1,0 +1,25 @@
+<mat-sidenav-container>
+    <mat-sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page"></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div>INGATLAN-APP</div>
+            <div>
+                <ul>
+                    
+                    <li><a value="login">Login</a></li>
+                    <li><a value="register">Register</a></li>
+                    <li><a value="main">Main</a></li>
+                    <li><a value="ingatlans">Ingatlans</a></li>
+                    <li><a value="add-ingatlan">Add ingatlan</a></li>
+                    <li><a value="contact">Contact</a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
