@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loadingSub = this.loadingObservation
     .subscribe(
       { next: (data: boolean) => {
-        console.log(data);
+        this.router.navigateByUrl('/main');
       }, error: (error) => {
         console.error(error);
       }, complete: () => {
