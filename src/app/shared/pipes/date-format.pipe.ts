@@ -5,9 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DateFormatPipe implements PipeTransform {
 
-  transform(value: Date, ...args: unknown[]): string {
+  transform(value: number, ...args: unknown[]): string {
     let tzoffset = (new Date(value)).getTimezoneOffset() * 60000;
-    let local = (new Date(Date.now() - tzoffset)).toISOString().replace('Z','').replace('T','');
+    let minOffset = new Date(value).getTime() - tzoffset;
+    let local = (new Date(minOffset)).toISOString().replace('Z','').replace('T','');
     return local;
   }
 

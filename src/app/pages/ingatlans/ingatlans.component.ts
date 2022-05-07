@@ -20,7 +20,7 @@ export class IngatlansComponent implements OnInit {
     })
   }
 
-  loadIngatlan(ingatlanObject: any){
+  loadIngatlan(ingatlanObject: Image){
     this.chosenIngatlan = ingatlanObject;
   }
 }

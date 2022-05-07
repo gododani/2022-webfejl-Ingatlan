@@ -4,4 +4,5 @@ export interface Image{
     ingatlan_name: string;
     details: string;
     photo_url: string;
+    image_url: string;
 }
