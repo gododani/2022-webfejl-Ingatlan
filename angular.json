@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Ingatlan:build:production",
+            "firebaseProject": "webfejl-2022-ingatlan",
+            "firebaseHostingSite": "webfejl-2022-ingatlan"
+          }
         }
       }
     }

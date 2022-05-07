@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   { 
@@ -10,11 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
   {
     path: 'main', 
-    loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule) 
+    loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'ingatlans', 
-    loadChildren: () => import('./pages/ingatlans/ingatlans.module').then(m => m.IngatlansModule) 
+    loadChildren: () => import('./pages/ingatlans/ingatlans.module').then(m => m.IngatlansModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'contact', 
@@ -26,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: '', 
-    redirectTo: '/main',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {

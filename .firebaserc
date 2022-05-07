@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-2022-ingatlan": {
+      "hosting": {
+        "Ingatlan": [
+          "webfejl-2022-ingatlan"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-2022-ingatlan"
+  }
+}
