@@ -16,16 +16,13 @@ export class CommentService {
     return this.afs.collection<Comment>(this.collectionName).doc(comment.id).set(comment);
   }
 
-  getAll(){
-    return this.afs.collection<Comment>(this.collectionName).valueChanges();
-  }
-
   update(comment: Comment){
-    this.afs.collection<Comment>(this.collectionName).doc(comment.id).set(comment);
+    console.log('benne van a serviceben')
+    return this.afs.collection<Comment>(this.collectionName).doc(comment.id).set(comment);
   }
 
   delete(id: string){
-    this.afs.collection<Comment>(this.collectionName).doc(id).delete();
+    return this.afs.collection<Comment>(this.collectionName).doc(id).delete();
   }
 
   getCommentsByIngatlanId(ingatlanId: string){

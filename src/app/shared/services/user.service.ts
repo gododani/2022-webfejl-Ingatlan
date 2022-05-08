@@ -18,16 +18,4 @@ export class UserService {
   getById(id: string){
     return this.afs.collection<User>(this.collectionName).doc(id).valueChanges();
   }
-
-  getAll(){
-    return this.afs.collection<User>(this.collectionName).valueChanges()
-  }
-
-  update(user: User){
-    return this.afs.collection<User>(this.collectionName).doc(user.id).set(user);
-  }
-
-  delete(id: string){
-    return this.afs.collection<User>(this.collectionName).doc(id).delete();
-  }
 }

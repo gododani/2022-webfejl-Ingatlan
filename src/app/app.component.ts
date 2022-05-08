@@ -15,9 +15,7 @@ export class AppComponent implements OnInit{
   routes: Array<string> = [];
   loggedInUser?: firebase.default.User | null;
 
-  constructor(private router: Router, private authService: AuthService){
-
-  }
+  constructor(private router: Router, private authService: AuthService){}
 
   ngOnInit(){
     this.routes = this.router.config.map(config => config.path)  as string[];

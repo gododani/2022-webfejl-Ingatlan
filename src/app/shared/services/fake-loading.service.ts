@@ -8,18 +8,6 @@ export class FakeLoadingService {
 
   constructor() { }
 
-  // loadingWithPromise(email: string, password: string): Promise<boolean>{
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() =>{
-  //       if(email === 'test@gmail.com' && password === 'test'){
-  //         resolve(true);
-  //       } else{
-  //         reject(false);
-  //       }
-  //     }, 3000)
-  //   });
-  // }
-
   loadingWithObservable(email: string, password: string): Observable<boolean>{
     return new Observable((subscriber: Subscriber<boolean>) =>{
       let i = 0;

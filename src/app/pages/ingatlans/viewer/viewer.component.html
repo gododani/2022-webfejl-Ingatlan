@@ -42,7 +42,7 @@
     
     <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">
       <td>{{comment.username}}</td>
-      <td>{{comment.comment}}</td>
+      <td><input matInput type="text" value="{{comment.comment}}"></td>
       <td>{{comment.date | dateFormat}}</td>
       <td><button mat-raised-button color="primary" (click)="updateComment(comment.username, comment)">Update</button></td>
       <td><button mat-raised-button color="warn" (click)="deleteComment(comment.id, comment.username)">Delete</button></td>
