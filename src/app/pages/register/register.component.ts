@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../shared/models/User';
 import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,34 +23,34 @@ export class RegisterComponent implements OnInit {
     })
   });
 
-  constructor(private location: Location, private authService: AuthService, private userService: UserService) { }
+  constructor(private location: Location, private router: Router, private authService: AuthService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log(this.registerForm.value);
-    this.authService.register(this.registerForm.get('email')?.value, this.registerForm.get('password')?.value).then(cred => {
-      console.log(cred);
-      const user: User = {
-        id: cred.user?.uid as string,
-        username: this.registerForm.get('email')?.value.split('@')[0],
-        email: this.registerForm.get('email')?.value,
-        name: {
-          firstname: this.registerForm.get('name.firstname')?.value,
-          lastname: this.registerForm.get('name.lastname')?.value,
+    if(this.registerForm.get('password')?.value == this.registerForm.get('rePassword')?.value){
+      this.authService.register(this.registerForm.get('email')?.value, this.registerForm.get('password')?.value).then(cred => {
+        console.log(cred);
+        const user: User = {
+          id: cred.user?.uid as string,
+          username: this.registerForm.get('email')?.value.split('@')[0],
+          email: this.registerForm.get('email')?.value,
+          name: {
+            firstname: this.registerForm.get('name.firstname')?.value,
+            lastname: this.registerForm.get('name.lastname')?.value,
+          }
         }
-      }
-
-      this.userService.create(user).then(_ =>{
-        console.log('User added successfully!');
+        this.userService.create(user).then(_ =>{
+          console.log('User added successfully!');
+          this.router.navigateByUrl('/main');
+        }).catch(error => {
+          console.error(error);
+        })
       }).catch(error => {
         console.error(error);
-      })
-
-    }).catch(error => {
-      console.error(error);
-    });
+      });
+    }
   }
 
   goBack(){

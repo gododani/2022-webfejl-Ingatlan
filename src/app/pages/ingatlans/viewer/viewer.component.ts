@@ -101,7 +101,6 @@ export class ViewerComponent implements OnInit, OnChanges {
   updateComment(username: string, comment: Comment){
     if(this.commentsForm.get('username')?.value === username){
       this.commentService.update(comment);
-      console.log('Lefutott a viewer')
     }
   }
 

@@ -17,7 +17,6 @@ export class CommentService {
   }
 
   update(comment: Comment){
-    console.log('benne van a serviceben')
     return this.afs.collection<Comment>(this.collectionName).doc(comment.id).set(comment);
   }
 
