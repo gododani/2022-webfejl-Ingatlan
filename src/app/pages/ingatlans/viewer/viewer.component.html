@@ -39,7 +39,7 @@
       <th>Update</th>
       <th>Delete</th>
     </tr>
-    
+
     <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">
       <td>{{comment.username}}</td>
       <td><input matInput type="text" value="{{comment.comment}}"></td>

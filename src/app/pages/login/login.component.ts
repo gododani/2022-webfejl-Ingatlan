@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
   login(){
     this.loading = true;
     this.authService.login(this.email.value, this.password.value).then(_ => {
-      this.router.navigateByUrl('/main');
       this.loading = false;
+      this.router.navigateByUrl('/main');
     }).catch(error => {
       console.error(error);
       this.loading = false;
