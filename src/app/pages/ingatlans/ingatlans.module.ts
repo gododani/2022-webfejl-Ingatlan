@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSortModule
   ]
 })
 export class IngatlansModule { }

@@ -1,68 +1,19 @@
-<!-- <div class="container" *ngIf="ingatlanInput">
-    <img class="ingatlanImage" [src]="loadedImage">
-    <div class="break"></div>
-    <div>{{ingatlanInput.user_name}}</div>
-    <div class="break"></div>
-    <div>{{ingatlanInput.user_url}}</div>
-    <div class="break"></div>
-    <div>{{ingatlanInput.photo_url}}</div>
-
-    <div class="break"></div>
-
-    <div *ngIf="comments.length">
-        <table>
-            <tr>
-                <th>User</th>
-                <th>Comment</th>
-                <th>Date</th>
-            </tr>
-            <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">
-                <td>{{comment.username}}</td>
-                <td>{{comment.comment}}</td>
-                <td>{{comment.date | dateFormat}}</td>
-            </tr>
-        </table>
-    </div> 
-
-    <div class="break"></div>
-    
-    <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" formControlName="username">
-        </div>
-        <div class="break"></div>
-        <div>
-            <textarea rows="10" cols="50" formControlName="comment"></textarea>
-        </div>
-        <div class="break"></div>
-        <div>
-            <button type="submit">Add</button>
-        </div>
-    </form>
-</div> -->
-
-<!-- <mat-card>
+<div class="div-card" *ngIf="ingatlanInput">
+  <mat-card class="card">
     <mat-card-header>
-        <mat-card-title>{{ingatlanInput.user_name}}</mat-card-title>
+      <mat-card-title>{{ingatlanInput.ingatlan_name}}</mat-card-title>
+      <mat-card-subtitle>{{ingatlanInput.user_name}}</mat-card-subtitle>
     </mat-card-header>
-
+    <img mat-card-image [src]="loadedImage" >
     <mat-card-content>
-        <img class="ingatlanImage" [src]="loadedImage">
-        <div class="break"></div>
-        <div>{{ingatlanInput.user_name}}</div>
-        <div class="break"></div>
-        <div>{{ingatlanInput.user_url}}</div>
-        <div class="break"></div>
-        <div>{{ingatlanInput.photo_url}}</div>
+      <span>{{ingatlanInput.details}}</span>
     </mat-card-content>
-
     <mat-card-actions>
         <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
             <div>
                 <mat-form-field>
                     <mat-label for="username">Username:</mat-label>
-                    <input matInput type="text" formControlName="username">
+                    <input matInput type="text" formControlName="username" [readonly]="true">
                 </mat-form-field>
             </div>
             <div class="break"></div>
@@ -74,59 +25,27 @@
             </div>
             <div class="break"></div>
             <div>
-                <button mat-raised-button color="primary" type="submit">Add</button>
+                <button mat-raised-button color="primary" type="submit">Add comment</button>
             </div>
         </form>
     </mat-card-actions>
-
-</mat-card> -->
-
-
-<div class="div-card" *ngIf="ingatlanInput">
-    <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title>{{ingatlanInput.ingatlan_name}}</mat-card-title>
-          <mat-card-subtitle>{{ingatlanInput.user_name}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="loadedImage" >
-        <mat-card-content>
-          <span>{{ingatlanInput.details}}</span>
-        </mat-card-content>
-        <mat-card-actions>
-            <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
-                <div>
-                    <mat-form-field>
-                        <mat-label for="username">Username:</mat-label>
-                        <input matInput type="text" formControlName="username">
-                    </mat-form-field>
-                </div>
-                <div class="break"></div>
-                <div>
-                    <mat-form-field>
-                        <mat-label for="comment">Comment:</mat-label>
-                        <textarea matInput rows="10" cols="50" formControlName="comment"></textarea>
-                    </mat-form-field>
-                </div>
-                <div class="break"></div>
-                <div>
-                    <button mat-raised-button color="primary" type="submit">Add comment</button>
-                </div>
-            </form>
-        </mat-card-actions>
-      </mat-card>
-
-      <div *ngIf="comments.length">
-        <table>
-            <tr>
-                <th>User</th>
-                <th>Comment</th>
-                <th>Date</th>
-            </tr>
-            <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">
-                <td>{{comment.username}}</td>
-                <td>{{comment.comment}}</td>
-                <td>{{comment.date | dateFormat}}</td>
-            </tr>
-        </table>
-    </div> 
+  </mat-card> 
+    
+  <table *ngIf="comments.length" matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="user">User</th>
+      <th mat-sort-header="comment">Comment</th>
+      <th mat-sort-header="date">Date</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    
+    <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">
+      <td>{{comment.username}}</td>
+      <td>{{comment.comment}}</td>
+      <td>{{comment.date | dateFormat}}</td>
+      <td><button mat-raised-button color="primary" (click)="updateComment(comment.username, comment)">Update</button></td>
+      <td><button mat-raised-button color="warn" (click)="deleteComment(comment.id, comment.username)">Delete</button></td>
+    </tr>
+  </table>
 </div>

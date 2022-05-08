@@ -15,16 +15,22 @@
     height: 0;
 }
 
-table, th, td{
+table{
+    width: 50%;
+    margin: 2rem auto 2rem auto;
+
+}
+
+table{
     border: 1px solid black;
 }
 
 .table-header-even{
-    background-color: goldenrod;
+    background-color: rgba(gray, $alpha: 0.2);
 }
 
 .table-header-odd{
-    background-color: gray;
+    background-color: rgba(gray, $alpha: 0.5);
 }
 
 form{
@@ -39,4 +45,4 @@ mat-form-field{
 .card {
     margin: auto;
     max-width: 400px;
-  }
+}
